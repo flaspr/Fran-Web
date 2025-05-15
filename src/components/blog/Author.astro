@@ -2,12 +2,19 @@
 import Title from "@components/global/Title.astro";
 
 const { author } = Astro.props;
+
+// Renderizamos el contenido MDX o Markdown
+const rendered = await author.render();
+const { Content } = rendered;
 ---
 
 <section>
 	<div class="mx-auto px-8 py-24 md:px-12 lg:pt-32 2xl:max-w-7xl">
 		<div class="py-10">
 			<Title title={author.data.name} subtitle="author" class="pb-10 pt-20 uppercase" />
+			<article class="prose-styles mt-12">
+				<Content />
+			</article>
 		</div>
 	</div>
 </section>
