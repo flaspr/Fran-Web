@@ -6,25 +6,21 @@
 		<meta name="robots" content="noindex" />
 		<link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
 		<title>Content Manager</title>
+
+		<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
-		<!-- Script de Netlify Identity Widget -->
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 		<script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 
-		<!-- Inicializa Netlify Identity -->
-		<script>
-			if (window.netlifyIdentity) {
-				window.netlifyIdentity.on("init", (user) => {
-					if (!user) {
-						window.netlifyIdentity.on("login", () => {
-							document.location.href = "/admin/";
-						});
-					}
-				});
-				window.netlifyIdentity.init();
-			}
-		</script>
+		<!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+		<div data-netlify-identity-menu></div>
+
+		<!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+		<div data-netlify-identity-button>Login with Netlify Identity</div>
 	</body>
 </html>
