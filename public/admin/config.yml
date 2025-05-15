@@ -4,6 +4,7 @@ collections:
       folder: "src/content/posts/en"
       create: true
       extension: "mdx"
+      format: frontmatter
       fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
           - { label: "Title", name: "title", widget: "string" }
