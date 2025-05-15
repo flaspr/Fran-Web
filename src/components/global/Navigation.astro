@@ -27,6 +27,10 @@ let pages = [
 		title: t("contacts"),
 		url: "/contact/",
 	},
+	{
+		title: "Admin",
+		url: "/admin/",
+	},
 ];
 
 // if (isDev) {
@@ -339,7 +343,7 @@ const { pathname } = Astro.url;
 						return "-3.5rem";
 					},
 				},
-				"<",
+				"<"
 			);
 
 		const isTouchDevice = window.matchMedia("(hover: none)").matches;
