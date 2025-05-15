@@ -15,9 +15,12 @@ collections:
                 - { label: "Link", name: "link", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - label: "Image"
+          - label: "Imagen"
             name: "image"
-            widget: "object"
+            widget: "image"
+            required: true
+            path: "src/assets/images" # Carpeta base donde busca imágenes
+            save_path: "@assets/images" # Alias para guardar la ruta
             fields:
                 - { label: "Source", name: "source", widget: "image" }
                 - { label: "Alt text", name: "alt", widget: "string" }
