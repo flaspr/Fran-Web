@@ -10,10 +10,12 @@ const postsCollection = defineCollection({
 				name: z.string(),
 				link: z.string(),
 			}),
-			image: z.object({
-				source: image(),
-				alt: z.string(),
-			}),
+			image: z
+				.object({
+					source: image().optional(),
+					alt: z.string(),
+				})
+				.optional(),
 
 			tags: z.array(z.string()),
 		}),
