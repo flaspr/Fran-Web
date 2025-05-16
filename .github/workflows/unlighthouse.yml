@@ -23,12 +23,17 @@ jobs:
             - name: Install project dependencies
               run: bun install
 
+            - name: Install system dependencies
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y libvips-dev
+
             - name: Install global tools (Netlify CLI and Unlighthouse only)
               run: bun add -g netlify-cli @unlighthouse/cli
 
             - name: Run Unlighthouse (audit report)
               run: unlighthouse-ci
-              continue-on-error: true # Evita que falle todo el workflow si esto da error
+              continue-on-error: true
 
             - name: Deploy Unlighthouse report to Netlify
               run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
