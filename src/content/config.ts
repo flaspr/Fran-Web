@@ -13,7 +13,7 @@ const postsCollection = defineCollection({
 			image: z
 				.object({
 					source: image().optional(),
-					alt: z.string(),
+					alt: z.string().optional(),
 				})
 				.optional(),
 
