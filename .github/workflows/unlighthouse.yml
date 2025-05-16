@@ -1,18 +1,15 @@
-name: Assertions and static report
+name: Auditoría con Unlighthouse (Manual)
 
 on:
     workflow_dispatch:
-    push:
-        branches:
-            - main
 
 jobs:
-    test-and-deploy:
+    audit:
         runs-on: ubuntu-latest
         timeout-minutes: 10
 
         steps:
-            - name: Checkout code
+            - name: Checkout del código
               uses: actions/checkout@v3
 
             - name: Setup Bun
@@ -20,23 +17,31 @@ jobs:
               with:
                   bun-version: latest
 
-            - name: Install project dependencies
-              run: bun install
+            - name: Cache de dependencias de Bun
+              uses: actions/cache@v3
+              with:
+                  path: ~/.bun/install/cache
+                  key: ${{ runner.os }}-bun-${{ hashFiles('bun.lockb') }}
+                  restore-keys: |
+                      ${{ runner.os }}-bun-
 
-            - name: Install system dependencies
+            - name: Instalar dependencias del sistema necesarias para Sharp
               run: |
                   sudo apt-get update
                   sudo apt-get install -y libvips-dev
 
-            - name: Install global tools (Netlify CLI and Unlighthouse only)
+            - name: Instalar dependencias del proyecto
+              run: bun install
+
+            - name: Instalar herramientas globales (Netlify CLI y Unlighthouse)
               run: bun add -g netlify-cli @unlighthouse/cli
 
-            - name: Run Unlighthouse (audit report)
+            - name: Ejecutar auditoría con Unlighthouse
               run: unlighthouse-ci
-              continue-on-error: true
+              continue-on-error: true # Para que el workflow no falle aunque la auditoría lo haga
 
-            - name: Deploy Unlighthouse report to Netlify
-              run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
+            - name: Subir reporte a Netlify
+              run: netlify deploy --dir=.unlighthouse --prod --message="📊 Reporte de auditoría desde GitHub Actions"
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

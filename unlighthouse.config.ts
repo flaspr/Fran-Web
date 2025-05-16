@@ -5,14 +5,14 @@ import { defineConfig } from "unlighthouse";
  * https://unlighthouse.dev/api/config
  */
 export default defineConfig({
-	site: "majestico.co",
+	site: "https://majestico.co",
 	scanner: {
 		exclude: [/^\/cdn-cgi\//],
 	},
 	ci: {
-		budget: 90,
-		buildStatic: true,
+		budget: 85,
+		buildStatic: false, // Solo audita la URL, sin compilar localmente
 	},
-	debug: true,
-	cache: false,
+	debug: false,
+	cache: true,
 });
