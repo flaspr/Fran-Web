@@ -1,6 +1,3 @@
-media_folder: "src/assets/images/blog"
-public_folder: "/assets/images/blog"
-
 collections:
     - name: posts
       label: Posts
@@ -20,9 +17,15 @@ collections:
                 - { label: "Link", name: "link", widget: "string" }
           - label: "Image"
             name: "image"
-            widget: "image"
+            widget: "object"
+            fields:
+                - { label: "Source", name: "source", widget: "image" }
+                - { label: "Alt Text", name: "alt", widget: "string" }
           - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
+
+media_folder: "src/assets/images/blog"
+public_folder: "/assets/images/blog"
 
 backend:
     name: git-gateway
