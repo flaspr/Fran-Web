@@ -47,7 +47,8 @@
 		"prettier": "3.5.2",
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-tailwindcss": "0.6.11",
-		"sharp": "0.33.5"
+		"sharp": "0.33.5",
+		"unlighthouse": "^0.16.3"
 	},
 	"overrides": {
 		"sharp": "0.33.5"
