@@ -1,45 +1,34 @@
-# [Mintaka](https://mintaka.majestico.co)
+# Mintaka
 
-> [!IMPORTANT]
-> Currently this theme only works with the premium version of GSAP, the steps to use the standard version will be available in the future.
+[![Astro](.github/images/astro-icon.png)](https://astro.build/) [![Tailwind](.github/images/tailwind-icon.png)](https://tailwindcss.com/) [![GSAP](.github/images/gsap.png)](https://gsap.com/)
 
-<a href="https://astro.build/">![Astro](.github/images/astro-icon.png)</a>
-<a href="https://tailwindcss.com/">![Tailwind](.github/images/tailwind-icon.png)</a>
-<a href="https://gsap.com/">![Gsap](.github/images/gsap.png)</a>
+Mintaka es una plantilla web creada con [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com/) y [GSAP](https://gsap.com/).
 
-Mintaka is a template made with [Astro](https://astro.build), [Tailwind](https://tailwindcss.com/) and [Gsap](https://gsap.com/)
-
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/majesticooss/mintaka)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/majesticooss/mintaka)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/majesticooss/mintaka)
-
-
-### [🧪 Site preview →](https://mintaka.majestico.co)
-
-### [🧑‍🚀 Astro website →](https://astro.build/)
-
-### [🕮 Astro docs →](https://docs.astro.build/en/getting-started/)
+> **Importante:** Actualmente esta plantilla funciona con la versión premium de GSAP. En el futuro se añadirán instrucciones para usar la versión estándar.
 
 ---
 
-## Preview
+## Vista previa
 
 ![Mintaka Preview](.github/images/majestico_share.gif)
 
-## 🧪 Test
-
-On the folder run
-
-1. `bun install`  <small>(or `yarn` or `pnpm i`)</small>
-2. `bun run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
-
-## ✅ Features
-
-- [x] Localization
-- [x] Blog
+Puedes ver el sitio en vivo aquí: [https://mintaka.majestico.co](https://mintaka.majestico.co)
 
 ---
 
-<p align="right"><a href="https://majestico.co" target="_blank">majestico.co</p>
+## Despliegue rápido
+
+- [Deploy en Cloudflare Workers](https://deploy.workers.cloudflare.com/?url=https://github.com/majesticooss/mintaka)
+- [Deploy en Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/majesticooss/mintaka)
+- [Deploy en Vercel](https://vercel.com/new/clone?repository-url=https://github.com/majesticooss/mintaka)
+
+---
+
+## Comenzar a desarrollar
+
+En la carpeta del proyecto, ejecuta:
+
+```bash
+bun install    # o yarn, o pnpm install
+bun run dev    # o yarn dev, o pnpm dev
+```
